@@ -1,0 +1,16 @@
+# PULSE paper configuration — the single main setting used for the
+# comparison table. Train with:
+#   python pulse/train_sgd.py --task SARS_Wuhan_Hu_1_RBD --sweep sweeps/paper.yaml
+#
+# No `grid` section: this is one run per task, not a sweep.
+defaults:
+  model.classifier: NAM                # neural additive model over positions
+  model.hidden_dims: [4]               # per-site hidden width
+  mutation_model.rates: sars_cov2      # SARS-CoV-2 mutational spectrum (C>T, G>T bias)
+  pool.mode: prevalence                # parents = sequences above the prevalence bar
+  pool.prevalence_threshold: 0.001     # 0.1% of total surveillance counts
+  observation.obs_dist_max: 1          # observed progeny within 1 nt of a parent
+  observation.max_degenerate_frac: 0.01
+  proposal.n_max: 3                    # proposal draws carry up to 3 nt changes
+  training.early_stop_checks: 100      # 100 checks x 10 steps = 1000-step patience
+grid: {}

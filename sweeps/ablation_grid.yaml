@@ -1,0 +1,15 @@
+# PULSE ablation grid — the sensitivity analysis reported in the paper.
+# Every combination of the grid values is run sequentially, on top of the
+# defaults. Train with:
+#   python pulse/train_sgd.py --task SARS_Wuhan_Hu_1_RBD --sweep sweeps/ablation_grid.yaml
+defaults:
+  model.hidden_dims: [4]
+  pool.mode: prevalence
+  proposal.n_max: 3
+  training.early_stop_checks: 100
+grid:
+  model.classifier: [LR, NAM]                    # architecture ablation
+  mutation_model.rates: [ti90_tv5, sars_cov2]    # mutation-spectrum ablation
+  pool.prevalence_threshold: [0.0005, 0.001]     # parent-pool size
+  observation.obs_dist_max: [1, 2, 3]            # observed-progeny radius
+  observation.max_degenerate_frac: [0.01, 0.02]  # degenerate-residue filter

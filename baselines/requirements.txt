@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+scikit-learn
+torch
+biopython
+matplotlib
+tqdm
+# ESM-1v is loaded with torch.hub from facebookresearch/esm.
+# fair-esm is an alternative if torch.hub is unavailable.
+fair-esm

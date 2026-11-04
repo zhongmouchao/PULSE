@@ -1,0 +1,23 @@
+# PULSE task: SARS_Beta_RBD. One training problem per variant; train once and score
+# every assay of the variant from the saved checkpoint (scripts/score_all.sh).
+# Benchmarks for this variant:
+#   data/SARS_binding_Beta_RBD_EVE_Truncated.csv
+#   data/SARS_expression_Beta_RBD_EVE_Truncated.csv
+task: SARS_Beta_RBD
+description: >
+  PULSE emergence-observation model for SARS-CoV-2 SARS_Beta_RBD.
+
+data:
+  training_file: data/SARS_Beta_RBD_training_counts.csv
+  benchmark_file: data/SARS_binding_Beta_RBD_EVE_Truncated.csv
+  nuc_column: 'Motif Nucleotide'
+  pep_column: 'Motif Peptide'
+  benchmark:
+    type: dms
+    mutation_column: mutation
+    sequence_column: mutated_sequence
+    score_column: DMS_score
+    functional_threshold: median
+
+mutation_model:
+  rates: sars_cov2

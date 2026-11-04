@@ -1,0 +1,31 @@
+PULSE training data — download instructions
+===========================================
+
+The five training files (one per SARS-CoV-2 variant) are hosted on Google
+Drive because of their size (~120 MB each):
+
+    https://drive.google.com/drive/folders/151zszaakRMy9KWyMiDdJGDcsEc4WRl6X?usp=sharing
+
+Download all five files and place them in THIS folder (data/):
+
+    SARS_Wuhan_Hu_1_RBD_training_counts.csv
+    SARS_Alpha_RBD_training_counts.csv
+    SARS_Beta_RBD_training_counts.csv
+    SARS_Eta_RBD_training_counts.csv
+    SARS_Omicron_XBB15_RBD_training_counts.csv
+
+Each file has one row per unique nucleotide sequence: a `Motif Nucleotide`
+column, a `Motif Peptide` column, and one integer count column per
+surveillance period.
+
+Once the files are in place:
+
+  1. Train PULSE (see ../README.md), e.g.
+         python pulse/train_sgd.py --task SARS_Wuhan_Hu_1_RBD --sweep sweeps/paper.yaml
+
+  2. To run the baselines, first convert the data into their internal layout:
+         cd baselines && python prepare_data.py
+
+See DATA.md in this folder for the full file list, including the eleven
+benchmark files (both the EVE-truncated subsets used in the paper and the
+full, untruncated libraries).

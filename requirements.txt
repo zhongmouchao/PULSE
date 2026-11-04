@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+pyyaml
+torch
+biopython
+matplotlib
+tqdm
+# ESM-1v baseline only (loaded with torch.hub from facebookresearch/esm;
+# fair-esm is the fallback if torch.hub is unavailable)
+fair-esm

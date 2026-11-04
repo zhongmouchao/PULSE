@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.DS_Store
+models/
+results/
+support_cache/
+*.out
+*.err
+
+# sequence data is distributed separately (see data/DATA.md)
+data/*.csv
+# baseline data is derived from data/ by baselines/prepare_data.py
+baselines/data/*/*.csv
+baselines/data/*/*.npz
+baselines/data/*/*.pkl
+baselines/data/*/*.txt
+baselines/data/*/*.lock
+baselines/result*/
