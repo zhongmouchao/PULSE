@@ -35,12 +35,11 @@ pip install -r requirements.txt
 
 ## Data
 
-The repository ships no sequence data. Download the five training files
-(~120 MB each) from
+The eleven benchmark files ship with the repository in `data/`. The five
+training files (~120 MB each) are hosted on
 [Google Drive](https://drive.google.com/drive/folders/151zszaakRMy9KWyMiDdJGDcsEc4WRl6X?usp=sharing)
-and place them in `data/`, together with the eleven benchmark files — see
-[data/DATA.md](data/DATA.md) for the exact file list and formats (also
-`data/DOWNLOAD.txt`). The five training problems share data by variant: one
+— download them into `data/` (see [data/DATA.md](data/DATA.md) for the exact
+file list and formats, also `data/DOWNLOAD.txt`). The five training problems share data by variant: one
 fit per variant serves all of that variant's assays.
 
 ## Train PULSE (one run per variant)

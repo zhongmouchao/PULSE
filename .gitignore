@@ -7,8 +7,9 @@ support_cache/
 *.out
 *.err
 
-# sequence data is distributed separately (see data/DATA.md)
-data/*.csv
+# only the large training counts are distributed separately (see data/DATA.md);
+# the benchmark CSVs are small and ship with the repository
+data/*_training_counts.csv
 # baseline data is derived from data/ by baselines/prepare_data.py
 baselines/data/*/*.csv
 baselines/data/*/*.npz

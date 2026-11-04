@@ -1,12 +1,11 @@
 # Data files expected in this folder
 
-**The repository ships no sequence data.** Download the five training files
-(~120 MB each) from Google Drive:
+The eleven benchmark files (both versions; small) ship with the repository in
+this folder. The five training files (~120 MB each) are hosted on Google Drive:
 
     https://drive.google.com/drive/folders/151zszaakRMy9KWyMiDdJGDcsEc4WRl6X?usp=sharing
 
-(also in `DOWNLOAD.txt` next to this file) and place them in this folder,
-together with the eleven benchmark files. Then:
+(also in `DOWNLOAD.txt` next to this file). Download them into this folder. Then:
 
 - PULSE works directly on these files (`tasks/*.yaml` already point here).
 - For the baselines, run `python prepare_data.py` from `baselines/` once; it

@@ -1,6 +1,8 @@
 PULSE training data — download instructions
 ===========================================
 
+The benchmark CSVs are already in this folder (they ship with the repository).
+
 The five training files (one per SARS-CoV-2 variant) are hosted on Google
 Drive because of their size (~120 MB each):
 
